@@ -1,28 +1,43 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 900px;
-  width: 90%;
-  margin: 0 auto;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 900px;
+	width: 90%;
+	margin: 0 auto;
+	min-height: 100vh;
 }
 
 .main {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 .logo {
-  font-size: 2rem;
-  margin: 0;
+	font-size: 2rem;
+	margin: 0;
 }
 
 .title {
-  font-size: 2rem;
-  margin: 0.5rem 0;
+	font-size: 2rem;
+	margin: 0.5rem 0;
+	margin-bottom: 1rem;
 }
 
-.title a {
-  color:  blue;
-  text-decoration: underline;
+.paragraph {
+	font-size: 1.35rem;
+	margin: 0.3rem 0;
+}
+
+.section {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.member {
+	font-size: 1.25rem;
+	margin: 0.3rem 0;
+}
+
+.members {
+	margin-top: 2rem;
 }
