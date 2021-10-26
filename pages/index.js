@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 import '@fontsource/syne/variable.css';
 import { Container, Heading, Button, Text, Link, SimpleGrid, Grid, Box, Image, HStack } from '@chakra-ui/react';
 import { NftIcon, TokensIcon, StakingIcon, MarketplaceIcon, DexIcon, VestingIcon } from '../components/contractIcons';
-import { AuditingIcon, PlanningIcon, FindingIcon, BuildingIcon, TreasuriesIcon } from '../components/helpIcons';
+import { WritingIcon, AuditingIcon, PlanningIcon, FindingIcon, BuildingIcon, TreasuriesIcon } from '../components/helpIcons';
 
 const Home = () => {
   const ContractTypes = ({ children, name }) => {
@@ -108,6 +108,10 @@ const Home = () => {
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} spacing={'40px'}>
           <HStack mb="8">
+            <WritingIcon h="50" w="50" mr="4" />
+            <Text fontSize="3xl">Writing Smart Contracts</Text>
+          </HStack>
+          <HStack mb="8">
             <AuditingIcon h="50" w="50" mr="4" />
             <Text fontSize="3xl">Auditing Contracts</Text>
           </HStack>
@@ -125,7 +129,7 @@ const Home = () => {
           </HStack>
           <HStack mb="8">
             <TreasuriesIcon h="50" w="50" mr="4" />
-            <Text fontSize="3xl">Allocateing Treasuries</Text>
+            <Text fontSize="3xl">Allocating Treasuries</Text>
           </HStack>
         </SimpleGrid>
       </Container>
