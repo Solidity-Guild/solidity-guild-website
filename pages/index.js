@@ -86,6 +86,9 @@ const Home = () => {
             <Link href="https://mannys.game/" isExternal color="black">
               Mannys Game
             </Link>
+            <Link href="https://eternal.plus/" isExternal color="black">
+              Eternal
+            </Link>
             <Link href="https://learn.nateliason.com/p/defi-orientation" isExternal color="black">
               DeFi Orientation
             </Link>
@@ -175,6 +178,9 @@ const Home = () => {
             </Link>
             <Link href="https://twitter.com/DugDaniels" isExternal color="black">
               @DugDaniels
+            </Link>
+            <Link href="https://twitter.com/blokboyJm" isExternal color="black">
+              @blokboyJm
             </Link>
           </SimpleGrid>
         </Container>
