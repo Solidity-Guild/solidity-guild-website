@@ -4,33 +4,6 @@ import '@fontsource/syne/700.css';
 import '@fontsource/syne/800.css';
 import '@fontsource/syne/variable.css';
 
-// Extend the theme to include custom colors, fonts, etc
-const colors = {
-  brand: {
-    900: 'blue',
-    800: 'green',
-    700: 'red',
-  },
-  colors: {
-    transparent: 'transparent',
-    black: '#000',
-    white: '#FAE9D1',
-    gray: {
-      50: 'yellow',
-      900: 'orange',
-    },
-  },
-  fonts: {
-    heading: 'Syne',
-    body: 'Syne',
-  },
-};
-
-const config = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-};
-
 const theme = extendTheme({
   fonts: {
     heading: 'Syne',
