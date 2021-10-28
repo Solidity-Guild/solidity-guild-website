@@ -146,6 +146,9 @@ const Home = () => {
             <Link href="https://twitter.com/nateliason" isExternal color="black">
               @NatEliason
             </Link>
+            <Link href="https://twitter.com/msfeldstein" isExternal color="black">
+              @msfeldstein
+            </Link>
             <Link href="https://twitter.com/BrennerSpear" isExternal color="black">
               @BrennerSpear
             </Link>
