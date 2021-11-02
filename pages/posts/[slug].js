@@ -4,6 +4,7 @@ import { getPostBySlug, getAllPosts } from '../../lib/api';
 import Head from 'next/head';
 import markdownToHtml from '../../lib/markdownToHtml';
 import { Box, Container, Heading } from '@chakra-ui/react';
+import Layout from '../components/layout';
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -11,24 +12,24 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Box preview={preview}>
+    <Layout preview={preview}>
       <Container>
         {router.isFallback ? (
           <Heading>Loading…</Heading>
         ) : (
           <>
-            <article className="mb-32">
+            <article>
               <Head>
                 <title>{post.title}</title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
-              <Heading title={post.title}>{post.title}</Heading>
-              <Container dangerouslySetInnerHTML={{ __html: post.content }}></Container>
+              <Heading>{post.title}</Heading>
+              <Box dangerouslySetInnerHTML={{ __html: post.content }}></Box>
             </article>
           </>
         )}
       </Container>
-    </Box>
+    </Layout>
   );
 }
 
