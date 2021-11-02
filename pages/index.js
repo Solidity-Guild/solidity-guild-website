@@ -1,11 +1,17 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import '@fontsource/syne/variable.css';
+import { getAllPosts } from '../lib/api';
+// import markdownToHtml from '../../lib/markdownToHtml';
+
 import { Container, Heading, Button, Text, Link, SimpleGrid, Grid, Box, Image, HStack } from '@chakra-ui/react';
 import { NftIcon, TokensIcon, StakingIcon, MarketplaceIcon, DexIcon, VestingIcon } from '../components/contractIcons';
 import { WritingIcon, AuditingIcon, PlanningIcon, FindingIcon, BuildingIcon, TreasuriesIcon } from '../components/helpIcons';
 
-const Home = () => {
+const Home = ({ allPosts }) => {
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
+
   const ContractTypes = ({ children, name }) => {
     return (
       <Box>
@@ -43,6 +49,9 @@ const Home = () => {
             <Image src="/images/stab.png" alt="Segun Adebayo" />
           </Box>
         </Grid>
+
+        {/* {heroPost && <HeroPost title={heroPost.title} coverImage={heroPost.coverImage} date={heroPost.date} author={heroPost.author} slug={heroPost.slug} excerpt={heroPost.excerpt} />}
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
 
         <Box>
           <Heading size="2xl" as="h3" fontWeight="black" pb="16">
@@ -188,5 +197,13 @@ const Home = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const allPosts = getAllPosts(['title', 'date', 'slug', 'author', 'coverImage', 'excerpt']);
+
+  return {
+    props: { allPosts },
+  };
+}
 
 export default Home;

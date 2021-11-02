@@ -17,10 +17,7 @@ const theme = extendTheme({
       900: '#FAE9D1',
     },
     gray: {
-      50: 'green',
-      700: 'purple',
       800: '#151515',
-      900: 'orange',
     },
   },
   config: {
