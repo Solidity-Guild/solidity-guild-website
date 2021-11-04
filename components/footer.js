@@ -15,7 +15,6 @@ const SocialButton = ({ children, label, href }) => {
       alignItems={'center'}
       justifyContent={'center'}
       transition={'background 0.3s ease'}
-      isExternal={true}
       _hover={{
         bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
       }}

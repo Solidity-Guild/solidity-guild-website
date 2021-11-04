@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 import '@fontsource/syne/variable.css';
 import { getAllPosts } from '../lib/api';
 import Layout from '../components/layout';
+import Posts from '../components/posts';
 
 import { Container, Heading, Button, Text, Link, SimpleGrid, Grid, Box, Image, HStack } from '@chakra-ui/react';
 import { NftIcon, TokensIcon, StakingIcon, MarketplaceIcon, DexIcon, VestingIcon } from '../components/contractIcons';
@@ -11,6 +12,7 @@ import { WritingIcon, AuditingIcon, PlanningIcon, FindingIcon, BuildingIcon, Tre
 const Home = ({ allPosts }) => {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
+  console.log(allPosts);
 
   const ContractTypes = ({ children, name }) => {
     return (
@@ -51,9 +53,6 @@ const Home = ({ allPosts }) => {
             </Box>
           </Grid>
 
-          {/* {heroPost && <HeroPost title={heroPost.title} coverImage={heroPost.coverImage} date={heroPost.date} author={heroPost.author} slug={heroPost.slug} excerpt={heroPost.excerpt} />}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
-
           <Box>
             <Heading size="2xl" as="h3" fontWeight="black" pb="16">
               Writing Contracts for
@@ -79,6 +78,13 @@ const Home = ({ allPosts }) => {
               </ContractTypes>
             </SimpleGrid>
           </Box>
+        </Container>
+
+        <Container maxW="1160px" w="100%" pb="16">
+          <Heading size="2xl" as="h3" fontWeight="black" pb="16">
+            Guild Blog Posts
+          </Heading>
+          {allPosts.length > 0 && <Posts posts={allPosts} />}
         </Container>
 
         <Box pt="16" pb="16" bg="whiteAlpha.900">
@@ -201,7 +207,8 @@ const Home = ({ allPosts }) => {
 };
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug', 'author', 'coverImage', 'excerpt']);
+  const allPosts = getAllPosts(['title', 'date', 'slug', 'author', 'coverImage', 'excerpt', 'tags']);
+  console.log(allPosts);
 
   return {
     props: { allPosts },

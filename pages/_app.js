@@ -5,6 +5,20 @@ import '@fontsource/syne/800.css';
 import '@fontsource/syne/variable.css';
 
 const theme = extendTheme({
+  components: {
+    // Button: {
+    //   variants: {
+    //     'with-shadow': {
+    //       bg: 'red.400',
+    //       boxShadow: '0 0 2px 2px #efdfde',
+    //     },
+    //     // 4. We can override existing variants
+    //     solid: (props) => ({
+    //       bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
+    //     }),
+    //   },
+    // },
+  },
   fonts: {
     heading: 'Syne',
     body: 'Syne',
@@ -18,6 +32,7 @@ const theme = extendTheme({
     },
     gray: {
       800: '#151515',
+      900: '#101010',
     },
   },
   config: {
