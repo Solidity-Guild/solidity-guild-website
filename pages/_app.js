@@ -4,34 +4,21 @@ import '@fontsource/syne/700.css';
 import '@fontsource/syne/800.css';
 import '@fontsource/syne/variable.css';
 
-// Extend the theme to include custom colors, fonts, etc
-const colors = {
-  brand: {
-    900: 'blue',
-    800: 'green',
-    700: 'red',
-  },
-  colors: {
-    transparent: 'transparent',
-    black: '#000',
-    white: '#FAE9D1',
-    gray: {
-      50: 'yellow',
-      900: 'orange',
-    },
-  },
-  fonts: {
-    heading: 'Syne',
-    body: 'Syne',
-  },
-};
-
-const config = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-};
-
 const theme = extendTheme({
+  components: {
+    // Button: {
+    //   variants: {
+    //     'with-shadow': {
+    //       bg: 'red.400',
+    //       boxShadow: '0 0 2px 2px #efdfde',
+    //     },
+    //     // 4. We can override existing variants
+    //     solid: (props) => ({
+    //       bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
+    //     }),
+    //   },
+    // },
+  },
   fonts: {
     heading: 'Syne',
     body: 'Syne',
@@ -44,10 +31,8 @@ const theme = extendTheme({
       900: '#FAE9D1',
     },
     gray: {
-      50: 'green',
-      700: 'purple',
       800: '#151515',
-      900: 'orange',
+      900: '#101010',
     },
   },
   config: {
