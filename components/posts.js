@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Heading, Link, Image, Text, Divider, HStack, Tag, Wrap, WrapItem, SpaceProps, useColorModeValue, Container, VStack, SimpleGrid } from '@chakra-ui/react';
 import DateFormatter from '../components/date-formatter';
-import { NextLink } from 'next/link';
+import NextLink from 'next/link';
 
 export const BlogTags = (props) => {
-  console.log(props);
+  //   console.log(props);
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
@@ -19,7 +19,7 @@ export const BlogTags = (props) => {
 };
 
 export const BlogAuthor = (props) => {
-  console.log(props);
+  //   console.log(props);
 
   return (
     <HStack marginTop="2" spacing="2" display="flex" alignItems="center" key={props.id}>
@@ -37,17 +37,21 @@ const Posts = ({ posts }) => {
   return (
     <SimpleGrid columns={[1, 2]} spacing={'20px'} mb="20">
       {posts.map((post, key) => {
-        console.log(post);
+        // console.log(post);
         return (
           <Box key={key} display="flex" flex="1" flexDirection="column" justifyContent="center" marginTop={{ base: '3', sm: '0' }}>
-            <Link as={NextLink} href={`/posts/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }} mb={4}>
-              <Image borderRadius="lg" src={post.coverImage} alt={post.title} objectFit="contain" />
-            </Link>
+            <NextLink href={`/posts/${post.slug}`} passHref>
+              <Link textDecoration="none" _hover={{ textDecoration: 'none' }} mb={4}>
+                <Image borderRadius="lg" src={post.coverImage} alt={post.title} objectFit="contain" />
+              </Link>
+            </NextLink>
             <BlogTags tags={post.tags} />
             <Heading marginTop="1">
-              <Link as={NextLink} href={`/posts/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                {post.title}
-              </Link>
+              <NextLink href={`/posts/${post.slug}`} passHref>
+                <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                  {post.title}
+                </Link>
+              </NextLink>
             </Heading>
             <Text as="p" marginTop="2" fontSize="lg">
               {post.excerpt}
