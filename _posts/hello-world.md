@@ -1,5 +1,5 @@
 ---
-title: 'Cool Article Name'
+title: 'Hello World Delete This On First Post'
 excerpt: 'This is a test!! Lorem, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
 coverImage: '/assets/blog/hello-world/hello-world.jpg'
 date: '2021-11-16T05:35:07.322Z'

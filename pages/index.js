@@ -12,7 +12,7 @@ import { WritingIcon, AuditingIcon, PlanningIcon, FindingIcon, BuildingIcon, Tre
 const Home = ({ allPosts }) => {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
-  console.log(allPosts);
+  // console.log(allPosts);
 
   const ContractTypes = ({ children, name }) => {
     return (
@@ -49,7 +49,7 @@ const Home = ({ allPosts }) => {
               </Link>
             </Box>
             <Box>
-              <Image src="/images/stab.png" alt="Segun Adebayo" />
+              <Image src="/images/stab.png" alt="Hero Slaying Dragon" />
             </Box>
           </Grid>
 
@@ -80,12 +80,12 @@ const Home = ({ allPosts }) => {
           </Box>
         </Container>
 
-        <Container maxW="1160px" w="100%" pb="16">
+        {/* <Container maxW="1160px" w="100%" pb="16">
           <Heading size="2xl" as="h3" fontWeight="black" pb="16">
             Guild Blog Posts
           </Heading>
           {allPosts.length > 0 && <Posts posts={allPosts} />}
-        </Container>
+        </Container> */}
 
         <Box pt="16" pb="16" bg="whiteAlpha.900">
           <Container maxW="1160px" w="100%">
@@ -208,7 +208,6 @@ const Home = ({ allPosts }) => {
 
 export async function getStaticProps() {
   const allPosts = getAllPosts(['title', 'date', 'slug', 'author', 'coverImage', 'excerpt', 'tags']);
-  console.log(allPosts);
 
   return {
     props: { allPosts },

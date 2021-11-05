@@ -32,9 +32,9 @@ export default function Nav() {
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               <Menu>
-                <Link as={NextLink} href="/blog">
+                {/* <Link as={NextLink} href="/blog">
                   Blog
-                </Link>
+                </Link> */}
                 <Link as={NextLink} href="https://docs.google.com/forms/d/e/1FAIpQLScR27DuDC_fPAwZXWFDKpZ8RUN_vBJnzM1zku0F1gKgen-hJw/viewform?usp=sf_link">
                   Contact
                 </Link>

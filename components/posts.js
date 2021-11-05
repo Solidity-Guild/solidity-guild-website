@@ -3,7 +3,7 @@ import { Box, Heading, Link, Image, Text, Divider, HStack, Tag, Wrap, WrapItem, 
 import DateFormatter from '../components/date-formatter';
 import { NextLink } from 'next/link';
 
-const BlogTags = (props) => {
+export const BlogTags = (props) => {
   console.log(props);
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
@@ -40,12 +40,12 @@ const Posts = ({ posts }) => {
         console.log(post);
         return (
           <Box key={key} display="flex" flex="1" flexDirection="column" justifyContent="center" marginTop={{ base: '3', sm: '0' }}>
-            <Link as={NextLink} href={`/blog/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }} mb={4}>
+            <Link as={NextLink} href={`/posts/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }} mb={4}>
               <Image borderRadius="lg" src={post.coverImage} alt={post.title} objectFit="contain" />
             </Link>
             <BlogTags tags={post.tags} />
             <Heading marginTop="1">
-              <Link as={NextLink} href={`/blog/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <Link as={NextLink} href={`/posts/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 {post.title}
               </Link>
             </Heading>
