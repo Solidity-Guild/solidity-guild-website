@@ -35,7 +35,7 @@ export default function Nav() {
                 {/* <Link as={NextLink} href="/blog">
                   Blog
                 </Link> */}
-                <NextLink href="https://docs.google.com/forms/d/e/1FAIpQLScR27DuDC_fPAwZXWFDKpZ8RUN_vBJnzM1zku0F1gKgen-hJw/viewform?usp=sf_link" passHref>
+                <NextLink href="/contact" passHref>
                   <Link>Contact</Link>
                 </NextLink>
               </Menu>

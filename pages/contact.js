@@ -39,7 +39,7 @@ const Contact = () => {
           Solidity Guild Project Proposal
         </Heading>
         <Text mb={8} textAlign={'center'}>
-          We review project proposals on an on-going basis. If your project is a good fit for someone in our collective, then we'll reach out with next steps.
+          We review project proposals on an on-going basis. If your project is a good fit for someone in our collective, then we&apos;ll reach out with next steps.
         </Text>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl id="name" mb={8} isInvalid={errors.name}>
