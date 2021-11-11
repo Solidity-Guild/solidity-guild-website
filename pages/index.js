@@ -198,6 +198,9 @@ const Home = ({ allPosts }) => {
               <Link href="https://twitter.com/blokboyJm" isExternal color="black">
                 @blokboyJm
               </Link>
+              <Link href="https://twitter.com/w1nt3r_eth" isExternal color="black">
+                @w1nt3r
+              </Link>
             </SimpleGrid>
           </Container>
         </Box>
