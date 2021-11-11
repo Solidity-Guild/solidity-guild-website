@@ -7,10 +7,29 @@ const Contact = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+
+  const onSubmit = (values) => {
+    console.log(`Data`);
+    // console.log(values);
+    // console.log(JSON.stringify(values));
+
+    const dataJson = JSON.stringify(values);
+
+    fetch('https://hooks.zapier.com/hooks/catch/11272006/bdh07n3/', {
+      method: 'POST',
+      body: dataJson,
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    reset();
   };
 
   return (
@@ -23,56 +42,56 @@ const Contact = () => {
           We review project proposals on an on-going basis. If your project is a good fit for someone in our collective, then we'll reach out with next steps.
         </Text>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <FormControl id="name" mb={8}>
+          <FormControl id="name" mb={8} isInvalid={errors.name}>
             <FormLabel htmlFor="name">What is your name?</FormLabel>
-            <Input placeholder="Jane Doe" {...register('title', { required: true })} />
-            {errors.title && <FormErrorMessage>This field is required</FormErrorMessage>}
+            <Input placeholder="Jane Doe" {...register('name', { required: true })} />
+            {errors.name && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <FormControl id="twitter" mb={8}>
+          <FormControl id="twitter" mb={8} isInvalid={errors.twitter}>
             <FormLabel htmlFor="twitter">What is your Twitter handle?</FormLabel>
-            <Input placeholder="@funfinance" {...register('company', { required: true })} />
-            {errors.company && <FormErrorMessage>This field is required</FormErrorMessage>}
+            <Input placeholder="@funfinance" {...register('twitter', { required: true })} />
+            {errors.twitter && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <FormControl id="project-name" mb={8}>
-            <FormLabel htmlFor="project-name">What is your project called?</FormLabel>
-            <Input placeholder="fun.finance" {...register('link', { required: true })} />
-            {errors.company && <FormErrorMessage>This field is required</FormErrorMessage>}
+          <FormControl id="projectName" mb={8} isInvalid={errors.projectName}>
+            <FormLabel htmlFor="projectName">What is your project called?</FormLabel>
+            <Input placeholder="fun.finance" {...register('projectName', { required: true })} />
+            {errors.projectName && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <FormControl id="description" mb={8}>
+          <FormControl id="description" mb={8} isInvalid={errors.description}>
             <FormLabel htmlFor="description">How would you describe your project?</FormLabel>
-            <Input placeholder="Tell us everything" {...register('link', { required: true })} />
-            {errors.company && <FormErrorMessage>This field is required</FormErrorMessage>}
+            <Input placeholder="Tell us everything" {...register('description', { required: true })} />
+            {errors.description && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <FormControl id="help" mb={8}>
+          <FormControl id="help" mb={8} isInvalid={errors.help}>
             <FormLabel htmlFor="help">What kind of help are you looking for?</FormLabel>
-            <Input placeholder="Finance Contract" {...register('link', { required: true })} />
-            {errors.company && <FormErrorMessage>This field is required</FormErrorMessage>}
+            <Input placeholder="Finance Contract" {...register('help', { required: true })} />
+            {errors.help && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <FormControl id="budget" mb={8}>
+          <FormControl id="budget" mb={8} isInvalid={errors.budget}>
             <FormLabel htmlFor="budget">What is your budget (in DAI or Eth)?</FormLabel>
-            <Input placeholder="5 ETH" {...register('link', { required: true })} />
-            {errors.company && <FormErrorMessage>This field is required</FormErrorMessage>}
+            <Input placeholder="5 ETH" {...register('budget', { required: true })} />
+            {errors.budget && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <FormControl id="contact" mb={8}>
+          <FormControl id="contact" mb={8} isInvalid={errors.contact}>
             <FormLabel htmlFor="contact">What is the best way to reach out?</FormLabel>
-            <Input placeholder="Twitter" {...register('link', { required: true })} />
-            {errors.company && <FormErrorMessage>This field is required</FormErrorMessage>}
+            <Input placeholder="Twitter" {...register('contact', { required: true })} />
+            {errors.contact && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <FormControl id="referred" mb={8}>
+          <FormControl id="referred" mb={8} isInvalid={errors.referred}>
             <FormLabel htmlFor="referred">If you were referred here by someone, what is their name and/or twitter handle?</FormLabel>
-            <Input placeholder="@nateliason" {...register('link', { required: true })} />
-            {errors.company && <FormErrorMessage>This field is required</FormErrorMessage>}
+            <Input placeholder="@nateliason" {...register('referred', { required: true })} />
+            {errors.referred && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
-          <Button type="submit" size="lg" borderRadius="full" bg="whiteAlpha.900" color="black" textTransform="uppercase" fontWeight="black" mb="2">
-            Submit Project Proposal
+          <Button type="submit" isLoading={isSubmitting} size="lg" borderRadius="full" bg="whiteAlpha.900" color="black" textTransform="uppercase" fontWeight="black" mb="2">
+            Submit Project
           </Button>
         </form>
       </Container>
