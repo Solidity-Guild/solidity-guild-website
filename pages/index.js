@@ -117,6 +117,12 @@ const Home = ({ allPosts }) => {
               <Link href=" https://swirlandmint.com/" isExternal color="black">
                 Swirl & Mint
               </Link>
+              <Link href="https://codemakes.art/" isExternal color="black">
+                Code Makes Art
+              </Link>
+              <Link href="https://rings.market/" isExternal color="black">
+                Rings for Loot
+              </Link>
             </SimpleGrid>
           </Container>
         </Box>
