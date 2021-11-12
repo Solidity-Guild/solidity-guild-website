@@ -1,4 +1,4 @@
-import { Heading, Text, Container, FormLabel, Button, Input, FormErrorMessage, FormControl } from '@chakra-ui/react';
+import { Heading, Text, Container, FormLabel, Button, Input, FormErrorMessage, FormControl, SimpleGrid, Box } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import Layout from '../components/layout';
 
@@ -18,7 +18,7 @@ const Contact = () => {
 
     const dataJson = JSON.stringify(values);
 
-    fetch('https://hooks.zapier.com/hooks/catch/11272006/bdh07n3/', {
+    fetch('https://hooks.zapier.com/hooks/catch/2860237/bd136an/', {
       method: 'POST',
       body: dataJson,
     })
@@ -30,6 +30,15 @@ const Contact = () => {
       });
 
     reset();
+  };
+
+  const Card = ({ title, content }) => {
+    return (
+      <Box border="1px solid rgb(118, 118, 118)" borderRadius={5} mb={4} p="10px 14px">
+        <Heading size={'md'}>{title}</Heading>
+        <Text>{content}</Text>
+      </Box>
+    );
   };
 
   return (
@@ -68,12 +77,20 @@ const Contact = () => {
 
           <FormControl id="help" mb={8} isInvalid={errors.help}>
             <FormLabel htmlFor="help">What kind of help are you looking for?</FormLabel>
+            {/* <SimpleGrid columns={2} spacing={4}>
+              <Card title="Test" content="Memes" />
+              <Card title="Test" content="Memes" />
+            </SimpleGrid> */}
             <Input placeholder="Finance Contract" {...register('help', { required: true })} />
             {errors.help && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
 
           <FormControl id="budget" mb={8} isInvalid={errors.budget}>
             <FormLabel htmlFor="budget">What is your budget (in DAI or Eth)?</FormLabel>
+            {/* <SimpleGrid columns={1} spacing={4}>
+              <Card title="Factor In Gas" content="Currenlty gas costs between 0.1 eth and 1 eth" />
+              <Card title="The Cost " content="Currenlty gas costs between 0.1 eth and 1 eth" />
+            </SimpleGrid> */}
             <Input placeholder="5 ETH" {...register('budget', { required: true })} />
             {errors.budget && <FormErrorMessage>This field is required</FormErrorMessage>}
           </FormControl>
