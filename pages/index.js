@@ -42,7 +42,7 @@ const Home = ({ allPosts }) => {
               <Heading size="lg" as="h2" fontWeight="bold" pb="4">
                 Collective of web3 crypto developers
               </Heading>
-              <Link href="https://docs.google.com/forms/d/e/1FAIpQLScR27DuDC_fPAwZXWFDKpZ8RUN_vBJnzM1zku0F1gKgen-hJw/viewform?usp=sf_link" target="_blank" rel="noreferrer">
+              <Link href="https://hire.solidityguild.com/" target="_blank" rel="noreferrer">
                 <Button size="lg" borderRadius="full" bg="whiteAlpha.900" color="black" textTransform="uppercase" fontWeight="black" mb="2">
                   Reach Out
                 </Button>

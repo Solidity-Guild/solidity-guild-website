@@ -35,8 +35,11 @@ export default function Nav() {
                 {/* <Link as={NextLink} href="/blog">
                   Blog
                 </Link> */}
-                <NextLink href="/contact" passHref>
-                  <Link>Contact</Link>
+                <NextLink href="https://membership.solidityguild.com/" passHref>
+                  <Link target="_blank">Join</Link>
+                </NextLink>
+                <NextLink href="https://hire.solidityguild.com/" passHref>
+                  <Link target="_blank">Hire</Link>
                 </NextLink>
               </Menu>
               {/* <Button onClick={toggleColorMode} size={'sm'}>
